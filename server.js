@@ -2,7 +2,7 @@ var express = require("express");
 var mongoose = require("mongoose");
 var PORT = process.env.PORT || 8808;
 var app = express();
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongHeadlines";
 mongoose.connect(MONGODB_URI);
 
 app.use(express.urlencoded({ extended: true}));
@@ -16,7 +16,7 @@ var htmlRoutes = require("./routes/html-routes");
 apiRoutes(app);
 htmlRoutes(app);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout");
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout");
 
 app.listen(PORT, function() {
     console.log("App is listening on port http://localhost:" + PORT)

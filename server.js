@@ -2,7 +2,7 @@ var express = require("express");
 var mongoose = require("mongoose");
 var PORT = process.env.PORT || 8808;
 var app = express();
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout";
 mongoose.connect(MONGODB_URI);
 
 app.use(express.urlencoded({ extended: true}));
